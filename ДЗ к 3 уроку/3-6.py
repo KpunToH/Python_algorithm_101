@@ -22,7 +22,9 @@ print(f"Максимум равен {i_max}, минимум равен {i_min}")
 
 if i_min_index>i_max_index:
     i_min_index, i_max_index = i_max_index, i_min_index
+
 min_max_list = first_list[i_min_index+1: i_max_index]
 print(f"Элементы между минимальным и максимальным значением {min_max_list}")
+
 summa = sum(el for el in min_max_list)
 print(f"Сумма элементов между минимумом и максимумом равна {summa}")
