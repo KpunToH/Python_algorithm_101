@@ -7,13 +7,17 @@
 import random
 
 
-SIZE = 10
-first_list = [random.randint(0, SIZE * SIZE) for _ in range(SIZE)]
+RAZMER = random.randint(0, 20)
+first_list = [random.randint(0, RAZMER * RAZMER) for _ in range(RAZMER)]
 print(first_list)
-second_list = [0]*(SIZE+4)
 
-for i in first_list:
-    if first_list[i] % 2 == 0:
+# Если не пронумеровать элементы - возникают проблемы с ссылками на дублирующиеся значения
+first_list_enumerated = list(enumerate(first_list))
+second_list = []
+
+for i, j in first_list_enumerated:
+    if j % 2 == 0:
         second_list.append(i)
 
+# Индексация - с нуля!
 print(second_list)
